@@ -14,6 +14,7 @@ app.use('/api', indexRouter)
 
 const mongoURI = process.env.MONGODB_LOCAL_URI
 // const mongoURI = process.env.MONGODB_URI    몽고 Atlas cluster용
+// 그리고 package.json에 "start": "node app.js"를 추가해야 된다. 지금은 뺐다.
 console.log('mongodbUri ==>', mongoURI)  // 잘 들어오나 반드시 확인!
 
 mongoose.connect(mongoURI).then(()=>{console.log('mongoose connected')})
