@@ -1,5 +1,7 @@
 const mongoose = require('mongoose')
-const {Schema} = mongoose
+const Schema = mongoose.Schema
+const User = require('./User.js')
+const Reply = require('./Reply.js')
 
 const taskSchema = Schema(
 	{
@@ -9,13 +11,18 @@ const taskSchema = Schema(
 		},
 		isDone:{
 			type:Boolean,
-			required:true
+			default: false,
 		},
-		author:{
+		authorId:{
 			type:Schema.Types.ObjectId,
 			required:true,
 			ref:"User"
-		}
+		},
+		replyIds:[
+			{ type:Schema.Types.ObjectId,
+				ref:"Reply"
+			}
+		]
 	},
 	{ timestamps: true}
 )

@@ -1,21 +1,21 @@
 const mongoose = require('mongoose')
 const {Schema} = mongoose
+const User = require('./User.js')
 
 const replySchema = Schema(
 	{
-		itemId: {
-			type:Schema.Types.ObjectId,
-			required:true,
-			ref:"Task"
-		},
 		content: {
 			type:String,
 			required: true,
 		},
-		author:{
+		authorId:{
 			type:Schema.Types.ObjectId,
 			required:true,
 			ref:"User"
+		},
+		author:{
+			type:String,
+			required:true,
 		}
 	},
 	{ timestamps: true}
