@@ -23,6 +23,6 @@ mongoose.connect(mongoURI).then(()=>{console.log('mongoose connected')})
 })
 
 app.listen(process.env.PORT || 5001, ()=>{     // process.env.PORT는 aws서버에서 정한 포트
-	console.log('server on 5000')
+	console.log('server on 5001')
 })
 
