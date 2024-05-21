@@ -51,7 +51,6 @@ replyController.updateReply = async(req, res)=>{
 replyController.deleteReply = async(req, res)=>{
 	try{
 		const {id} = req.params;
-		// const {taskId} = req.body;
 		await Reply.deleteOne({_id: id})
 		//혹은  await Reply.findByIdAndDelete({ _id: id });
 		res.status(200).json({status:'ok',data:''})
